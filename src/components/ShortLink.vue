@@ -101,6 +101,7 @@ import fileCopy from './icons/file_copy.svg'
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: '16px',
           padding: '16px',
           backgroundColor: '#fafafa'
         }"
@@ -111,7 +112,8 @@ import fileCopy from './icons/file_copy.svg'
             fontSize: '15px',
             fontWeight: '700',
             lineHeight: '17px',
-            color: '#4A24AC'
+            color: '#4A24AC',
+            flexGrow: '1'
           }"
           >https://center.ai/pl-sg/</span
         >
