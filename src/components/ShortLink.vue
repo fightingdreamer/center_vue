@@ -13,7 +13,7 @@ import fileCopy from './icons/file_copy.svg'
       borderRadius: '30px',
       gap: '32px',
       backgroundColor: '#ffffff',
-      boxShadow: '0 15px 80px 0 rgb(22 3 86 / 6%)'
+      filter: 'drop-shadow(0px 15px 80px rgba(34, 3, 134, 0.06))'
     }"
   >
     <div
@@ -90,7 +90,7 @@ import fileCopy from './icons/file_copy.svg'
           borderRadius: '46px',
           backgroundColor: '#4a24ac',
           cursor: 'pointer',
-          boxShadow: '0px 0px 30px 0px rgb(22 3 86 / 6%) '
+          filter: 'drop-shadow(0px 0px 30px rgba(54, 60, 86, 0.07))'
         }"
       >
         Shorten it
