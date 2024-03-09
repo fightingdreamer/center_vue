@@ -1,0 +1,58 @@
+@import '@csstools/normalize.css';
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#app {
+    width: 480px;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src:
+        local("Montserrat"),
+        url("/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src:
+        local("Montserrat"),
+        url("/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src:
+        local("Montserrat"),
+        url("/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src:
+        local("Montserrat"),
+        url("/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
