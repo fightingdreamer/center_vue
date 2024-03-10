@@ -21,19 +21,19 @@ import RecentLink from './RecentLink.vue'
   flex-direction: column;
   gap: 8px;
 
+  > span {
+    padding: 0 40px 0 40px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
   > div {
     padding: 14px;
     border-radius: 40px;
     border: 2px solid rgba(103, 108, 128, 0.16);
   }
-}
-
-.legend {
-  padding: 0 40px 0 40px;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 17px;
 }
 
 ul {

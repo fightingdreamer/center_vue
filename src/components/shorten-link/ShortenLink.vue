@@ -48,7 +48,7 @@ import ResultLink from './ResultLink.vue'
     font-size: 22px;
     font-weight: 600;
     line-height: 28px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     color: #363c56;
     text-align: center;
   }
@@ -57,7 +57,7 @@ import ResultLink from './ResultLink.vue'
 button {
   font-family: Montserrat;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 20px;
   color: white;
   height: 46px;
