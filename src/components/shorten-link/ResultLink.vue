@@ -47,7 +47,8 @@ button {
 }
 
 img {
-  width: 18px;
-  height: 21px;
+  padding-right: 1px;
+  width: 19px;
+  height: 22px;
 }
 </style>
