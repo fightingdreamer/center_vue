@@ -1,4 +1,9 @@
 @import '@csstools/normalize.css';
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
 
 body {
     margin: 8px;
