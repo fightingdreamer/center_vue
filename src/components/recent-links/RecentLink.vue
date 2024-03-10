@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import fileCopy from '@/assets/icons/file_copy.svg'
-
-const p = defineProps<{
+defineProps<{
   name: string
   location: string
 }>()
