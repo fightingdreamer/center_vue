@@ -1,46 +1,64 @@
 # center_vue
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Install dependencies
 
 ```sh
-npm install
+bun install
 ```
 
-### Compile and Hot-Reload for Development
+or 
 
 ```sh
-npm run dev
+pnpm install
 ```
 
-### Type-Check, Compile and Minify for Production
+### Configure backend address in development
+
+Adjust Vite `server.proxy` entry in `vite.config.ts`, default `http://127.0.0.1:5000`.
+
+### Run development build with hot-reload
 
 ```sh
-npm run build
+bun run dev
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+or
 
 ```sh
-npm run lint
+pnpm run dev
 ```
+
+### Run production build
+
+```sh
+bun run build-only
+bun run preview
+```
+
+or
+
+```sh
+pnpm run build-only
+pnpm run preview
+```
+
+### Configure backend address in production
+
+Adjust NGINX `proxy_pass` entry in `etc/nginx/conf.d/default.conf`, default `http://127.0.0.1:5000/api`.
+
+### Run production build in container
+
+```sh
+podman build --tag center_ai-nginx .
+podman run --publish 127.0.0.1:3175:80/tcp center_ai-nginx
+```
+
+or 
+
+```sh
+docker build --tag center_ai-nginx .
+docker run --publish 127.0.0.1:3175:80/tcp center_ai-nginx
+```
+
+Note: Don't change to `0.0.0.0` aka public internet, this project was creating for exerce purposes and
+you generally need some kind of ingress reverse proxy like `caddy` with `https` in front of this container.
