@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import ShortLink from '@/components/ShortLink.vue'
-import RecentLinks from '@/components/RecentLinks.vue'
+import ShortenLink from '@/components/shorten-link/ShortenLink.vue'
+import RecentLinks from '@/components/recent-links/RecentLinks.vue'
 </script>
 
 <template>
-  <ShortLink />
+  <ShortenLink />
   <RecentLinks />
 </template>
