@@ -16,9 +16,9 @@ import fileCopy from './icons/file_copy.svg'
     >
     <div
       :style="{
-        padding: '16px',
+        padding: '14px',
         borderRadius: '40px',
-        outline: '2px solid rgba(103, 108, 128, 0.16)'
+        border: '2px solid rgba(103, 108, 128, 0.16)'
       }"
     >
       <div
