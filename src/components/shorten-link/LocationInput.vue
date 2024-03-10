@@ -34,7 +34,7 @@ input {
 }
 
 .separator {
-  height: 1px;
-  background-color: #4a24accc;
+  height: 5px;
+  border-bottom: 1px solid #4a24accc;
 }
 </style>
