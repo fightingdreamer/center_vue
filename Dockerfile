@@ -1,12 +1,14 @@
-FROM docker.io/oven/bun:1.0.30-alpine as build
+FROM docker.io/library/alpine:3.19 as build
 RUN apk add --no-cache gzip
+RUN apk add --no-cache npm
+RUN npm install -g pnpm
 
 WORKDIR /opt/build
 
-COPY bun.lockb .
+COPY pnpm-lock.yaml .
 COPY package.json .
 
-RUN bun install
+RUN pnpm install
 
 COPY env.d.ts .
 COPY index.html .
@@ -23,7 +25,7 @@ COPY public public
 COPY .eslintrc.cjs .
 COPY .prettierrc.json .
 
-RUN bun run build-only
+RUN pnpm run build-only
 
 RUN gzip -6 --keep --recursive dist
 
