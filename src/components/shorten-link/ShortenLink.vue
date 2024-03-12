@@ -83,7 +83,6 @@ async function onShortenClick() {
   gap: 24px;
 
   span {
-    font-family: Montserrat;
     font-size: 22px;
     font-weight: 600;
     line-height: 28px;
@@ -94,7 +93,6 @@ async function onShortenClick() {
 }
 
 button {
-  font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;

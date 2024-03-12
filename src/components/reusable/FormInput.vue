@@ -31,7 +31,6 @@ function onChange(event: Event) {
 }
 
 .label {
-  font-family: Montserrat;
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
@@ -43,7 +42,6 @@ function onChange(event: Event) {
 }
 
 input {
-  font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;

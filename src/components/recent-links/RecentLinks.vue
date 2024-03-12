@@ -29,7 +29,6 @@ const recentLinksStore = useRecentLinksStore()
 
   > span {
     padding: 0 40px 0 40px;
-    font-family: Montserrat;
     font-size: 12px;
     font-weight: 700;
     line-height: 20px;

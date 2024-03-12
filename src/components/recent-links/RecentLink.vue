@@ -50,7 +50,6 @@ div {
 }
 
 .target-url {
-  font-family: Montserrat;
   font-size: 12px;
   font-weight: 400;
   line-height: 17px;
@@ -58,7 +57,6 @@ div {
 }
 
 .source-url {
-  font-family: Montserrat;
   font-size: 15px;
   font-weight: 700;
   line-height: 17px;

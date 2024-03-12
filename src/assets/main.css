@@ -6,6 +6,10 @@ ul {
     padding-inline-start: 0;
 }
 
+html {
+    font-family: Montserrat;
+}
+
 body {
     margin: 24px 8px;
     min-height: 100vh;
