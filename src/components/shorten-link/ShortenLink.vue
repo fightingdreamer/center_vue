@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logo from '@/assets/logo.svg'
+import Logo from '@/assets/logo.svg'
 import FormInput from '@/components/reusable/FormInput.vue'
 import GeneratedLink from '@/components/shorten-link/GeneratedLink.vue'
 import axios from 'axios'
@@ -40,7 +40,7 @@ async function onShortenClick() {
 <template>
   <div class="shorten-link">
     <div class="logo">
-      <img alt="Center AI" :src="logo" />
+      <Logo />
     </div>
     <div class="header">
       <span>Short link</span>
@@ -103,5 +103,13 @@ button {
   background-color: #4a24ac;
   cursor: pointer;
   filter: drop-shadow(0px 0px 30px rgba(54, 60, 86, 0.07));
+
+  &:hover {
+    background-color: #6831f8;
+  }
+
+  &:active {
+    filter: drop-shadow(0px 0px 10px rgba(87, 39, 213, 0.7));
+  }
 }
 </style>
