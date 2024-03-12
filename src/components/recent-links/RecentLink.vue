@@ -29,10 +29,12 @@ defineProps<{
 
   border-radius: 16px;
   &:first-child {
-    border-radius: 32px 32px 16px 16px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
   }
   &:last-child {
-    border-radius: 16px 16px 32px 32px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
   }
 }
 
