@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import fileCopy from '@/assets/icons/file_copy.svg'
-defineProps<{
+import CopyToClipboard from '@/components/reusable/CopyToClipboard.vue'
+
+import { redirectionLink } from '@/lib/url'
+import { computed } from 'vue'
+
+const props = defineProps<{
   name: string
   location: string
 }>()
+
+const link = computed(() => redirectionLink(props.name))
 </script>
 
 <template>
   <li class="recent-link">
     <div>
-      <span class="location">{{ location }}</span>
-      <span class="name-as-url">https://center.ai/{{ name }}/</span>
+      <span class="target-url">{{ location }}</span>
+      <span class="source-url">{{ link }}/</span>
     </div>
-    <button>
-      <img :src="fileCopy" alt="File copy" />
-    </button>
+    <CopyToClipboard :text="link" />
   </li>
 </template>
 
@@ -45,7 +49,7 @@ div {
   flex-grow: 1;
 }
 
-.location {
+.target-url {
   font-family: Montserrat;
   font-size: 12px;
   font-weight: 400;
@@ -53,7 +57,7 @@ div {
   color: rgba(54, 60, 86, 1);
 }
 
-.name-as-url {
+.source-url {
   font-family: Montserrat;
   font-size: 15px;
   font-weight: 700;

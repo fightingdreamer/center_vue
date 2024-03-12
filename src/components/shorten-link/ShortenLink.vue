@@ -1,7 +1,40 @@
 <script setup lang="ts">
 import logo from '@/assets/logo.svg'
-import LocationInput from './LocationInput.vue'
-import ResultLink from './ResultLink.vue'
+import FormInput from '@/components/reusable/FormInput.vue'
+import GeneratedLink from '@/components/shorten-link/GeneratedLink.vue'
+import axios from 'axios'
+import { shallowRef } from 'vue'
+import { useRecentLinksStore } from '@/store/recentLinks'
+import { absoluteUrl } from '@/lib/url'
+
+const recentLinkStore = useRecentLinksStore()
+
+const location = shallowRef<string>('')
+
+const name = shallowRef<string>('')
+const error = shallowRef<undefined | string>()
+
+function onLocationChange(value: string) {
+  location.value = value
+}
+
+async function onShortenClick() {
+  try {
+    const data = { location: location.value }
+    const response = await axios.request<{ name: string }>({
+      url: '/api/redirections/',
+      data,
+      method: 'post'
+    })
+    name.value = response.data.name
+    error.value = undefined
+    recentLinkStore.remember(name.value, data.location)
+  } catch (err) {
+    if (axios.isAxiosError(err)) {
+      error.value = err.response?.data?.location?.[0]
+    }
+  }
+}
 </script>
 
 <template>
@@ -11,9 +44,15 @@ import ResultLink from './ResultLink.vue'
     </div>
     <div class="header">
       <span>Short link</span>
-      <LocationInput />
-      <button>Shorten it</button>
-      <ResultLink location="https://center.ai/pl-sg/" />
+      <FormInput
+        label="Link to shortcut"
+        :placeholder="absoluteUrl('very-long-link')"
+        :value="location"
+        @change="onLocationChange"
+        :error="error"
+      />
+      <button @click="onShortenClick">Shorten it</button>
+      <GeneratedLink v-if="name" :name="name" />
     </div>
   </div>
 </template>

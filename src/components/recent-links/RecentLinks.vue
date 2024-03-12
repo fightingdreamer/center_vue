@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import RecentLink from './RecentLink.vue'
+import { useRecentLinksStore } from '@/store/recentLinks'
+import RecentLink from '@/components/recent-links/RecentLink.vue'
+
+const recentLinksStore = useRecentLinksStore()
 </script>
 
 <template>
-  <div class="recent-links">
+  <div class="recent-links" v-if="recentLinksStore.links.length">
     <span class="legend">Last links</span>
     <div>
       <ul>
-        <RecentLink name="pl-b" location="https://center.ai/pl/blog/" />
-        <RecentLink name="pl-b" location="https://center.ai/pl/blog/" />
-        <RecentLink name="pl-b" location="https://center.ai/pl/blog/" />
+        <RecentLink
+          v-for="link in recentLinksStore.links"
+          :key="link.location"
+          :name="link.name"
+          :location="link.location"
+        />
       </ul>
     </div>
   </div>

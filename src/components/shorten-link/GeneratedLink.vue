@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import fileCopy from '@/assets/icons/file_copy.svg'
-import { copyToClipboard } from '@/lib/clipboard'
-const p = defineProps<{
-  location: string
+import { redirectionLink } from '@/lib/url'
+import CopyToClipboard from '@/components/reusable/CopyToClipboard.vue'
+import { computed } from 'vue'
+
+const props = defineProps<{
+  name: string
 }>()
+
+const link = computed(() => redirectionLink(props.name))
 </script>
 
 <template>
   <div class="result-link">
-    <span>{{ location }}</span>
-    <button @click="copyToClipboard(p.location)">
-      <img :src="fileCopy" alt="File copy" />
-    </button>
+    <span>{{ link }}</span>
+    <CopyToClipboard :text="link" />
   </div>
 </template>
 
@@ -27,7 +29,6 @@ const p = defineProps<{
 }
 
 span {
-  font-family: Montserrat;
   font-size: 15px;
   font-weight: 700;
   line-height: 17px;
