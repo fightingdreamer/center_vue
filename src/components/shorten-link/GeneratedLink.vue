@@ -46,10 +46,4 @@ button {
   cursor: pointer;
   background-color: transparent;
 }
-
-img {
-  padding-right: 1px;
-  width: 19px;
-  height: 22px;
-}
 </style>

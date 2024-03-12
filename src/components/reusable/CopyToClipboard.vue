@@ -12,3 +12,11 @@ defineProps<{
     <img :src="fileCopy" alt="File copy" />
   </button>
 </template>
+
+<style scoped>
+img {
+  padding-right: 1px;
+  width: 19px;
+  height: 22px;
+}
+</style>
